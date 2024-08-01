@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useEffect} from 'react'
+import { Data } from './data'
+import CardEvent from './component/CardEvent'
 
-function App() {
+const App = () => {
+    const [events,setEvents]=useState([])
+    const [selectedEvent,setSelectedEvent]=useState([])
+
+    useEffect(()=>{
+        setEvents(Data)
+    })
+
+    console.log(events)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Event list</h1>
+      {events.map((e)=>{
+      return (
+        <CardEvent key={e.id} event={e}></CardEvent>
+      )})}
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
