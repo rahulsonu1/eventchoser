@@ -2,8 +2,7 @@ import React from 'react'
 import { Card,Button } from 'react-bootstrap'
 
 
-
-const CardEvent = ({event, onSelect}) => {
+const CardEvent = ({event, onSelect , isSelected}) => {
   return (
     <Card className='m-4' style={{ width: '18rem' }}>
       <Card.Body>
@@ -13,7 +12,7 @@ const CardEvent = ({event, onSelect}) => {
           <p>Start Time :{event.start_time}</p>
           <p>End Time :{event.end_time}</p>
         </Card.Text>
-        <Button onClick={() => onSelect(event)} >
+        <Button onClick={() => onSelect(event)} disabled={isSelected} >
         Add
       </Button>
       </Card.Body>

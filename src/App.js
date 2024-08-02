@@ -41,7 +41,7 @@ const App = () => {
         <Col md={6}>
           <h1>Event list</h1>
           {events.map((e) => (
-            <CardEvent key={e.id} event={e} onSelect={handleSelect} />
+            <CardEvent key={e.id} event={e} onSelect={handleSelect} isSelected={selectedEvents.some(se => se.id === e.id)}/>
           ))}
         </Col>
         <Col md={6}>
