@@ -36,7 +36,7 @@ const App = () => {
   }
 
   return (
-    <Container fluid>
+    <Container fluid style={{minHeight:"100vh", padding:"40px",backgroundColor:'#e6e6e6'}}>
       <Row>
         <Col md={6}>
           <h1>Event list</h1>
@@ -45,7 +45,7 @@ const App = () => {
           ))}
         </Col>
         <Col md={6}>
-          <Selected selectedEvents={selectedEvents} setSelectedEvents={setSelectedEvents} />
+          {selectedEvents.length>0 && <Selected selectedEvents={selectedEvents} setSelectedEvents={setSelectedEvents} />}
         </Col>
       </Row>
     </Container>
