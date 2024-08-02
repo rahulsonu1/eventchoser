@@ -1,7 +1,9 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card,Button } from 'react-bootstrap'
 
-const CardEvent = ({event}) => {
+
+
+const CardEvent = ({event, onSelect}) => {
   return (
     <Card className='m-4' style={{ width: '18rem' }}>
       <Card.Body>
@@ -11,7 +13,11 @@ const CardEvent = ({event}) => {
           <p>Start Time :{event.start_time}</p>
           <p>End Time :{event.end_time}</p>
         </Card.Text>
+        <Button onClick={() => onSelect(event)} >
+        Add
+      </Button>
       </Card.Body>
+      
     </Card>
   )
 }
